@@ -1,0 +1,18 @@
+{
+  "plugin": [
+      "stylelint-scss"
+  ],
+  "extends": [
+    "stylelint-config-recommended-scss",
+    "stylelint-prettier/recommended",
+    "stylelint-config-css-modules"
+  ],
+  "ignoreFiles": [
+    "**/node_modules/**"
+  ],
+  "rules": {
+    "at-rule-no-unknown": [true, {
+      "ignoreAtRules": ["function", "if", "each", "include", "mixin"]
+    }]
+  }
+}
