@@ -4,3 +4,5 @@ export type PatternProps = {
   secondary?: string;
   size?: number;
 };
+
+export type PatternName = 'yagasuri' | 'seigaiha' | 'hishiseigaiha';
