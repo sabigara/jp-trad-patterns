@@ -57,6 +57,9 @@
 .numInput {
   width: 60px;
   margin-left: 10px;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  color: var(--content);
 }
 
 .pattern {

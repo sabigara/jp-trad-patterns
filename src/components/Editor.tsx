@@ -145,21 +145,17 @@ const Editor: React.FC<Props> = () => {
             </div>
             <div className={styles.paramsRow}>
               <span>Primary</span>
-              <span>
-                <ColorPicker
-                  color={primary ?? 'white'}
-                  onChange={(color) => setPrimary(color)}
-                />
-              </span>
+              <ColorPicker
+                color={primary ?? 'white'}
+                onChange={(color) => setPrimary(color)}
+              />
             </div>
             <div className={styles.paramsRow}>
               <span>Secondary</span>
-              <span>
-                <ColorPicker
-                  color={secondary ?? 'white'}
-                  onChange={(color) => setSecondary(color)}
-                />
-              </span>
+              <ColorPicker
+                color={secondary ?? 'white'}
+                onChange={(color) => setSecondary(color)}
+              />
             </div>
             <div className={styles.paramsButtonRow}>
               <Button onClick={handleExport}>Export</Button>
