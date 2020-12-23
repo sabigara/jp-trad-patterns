@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.inner {
+  display: flex;
+  width: 1200px;
+  padding: 40px 0;
+}
+
+.preview {
+  width: 600px;
+  height: 100%;
+}
+
+.params {
+  width: 400px;
+  height: 100%;
+  margin-left: 30px;
+}
