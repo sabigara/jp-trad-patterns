@@ -48,29 +48,39 @@ const Editor: React.FC<Props> = () => {
         )}
       </div>
       <div className={styles.inner}>
-        <div
-          className={styles.preview}
-          style={{
-            backgroundImage: `url(data:image/svg+xml;base64,${svgURL})`,
-          }}
-        />
+        <div className={styles.preview}>
+          <div
+            style={{
+              backgroundImage: `url(data:image/svg+xml;base64,${svgURL})`,
+            }}
+          />
+        </div>
         <div className={styles.params}>
           <PatternPicker onChange={handleSelectedChange} />
-          <Slider
-            value={size}
-            onChange={setSize}
-            min={0.1}
-            max={2}
-            step={0.05}
-          />
-          <ColorPicker
-            color={primary ?? 'white'}
-            onChange={(color) => setPrimary(color)}
-          />
-          <ColorPicker
-            color={secondary ?? 'white'}
-            onChange={(color) => setSecondary(color)}
-          />
+          <div className={styles.paramsRow}>
+            <span>Size</span>
+            <Slider
+              value={size}
+              onChange={setSize}
+              min={0.1}
+              max={2}
+              step={0.05}
+            />
+          </div>
+          <div className={styles.paramsRow}>
+            <span>Primary</span>
+            <ColorPicker
+              color={primary ?? 'white'}
+              onChange={(color) => setPrimary(color)}
+            />
+          </div>
+          <div className={styles.paramsRow}>
+            <span>Secondary</span>
+            <ColorPicker
+              color={secondary ?? 'white'}
+              onChange={(color) => setSecondary(color)}
+            />
+          </div>
         </div>
       </div>
     </div>
