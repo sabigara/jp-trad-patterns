@@ -1,7 +1,7 @@
 .container {
   display: flex;
   justify-content: center;
-  min-height: 100vh;
+  height: 100vh;
   background: rgb(201, 211, 245);
 }
 
@@ -16,7 +16,7 @@
   height: 100%;
   padding: 10px;
   background: white;
-  border-radius: 18px;
+  overflow: scroll;
 
   & > :first-child {
     width: 100%;
@@ -40,7 +40,14 @@
   color: var(--content);
 
   & > :first-child {
+    display: inline-block;
+    width: 150px;
     margin-right: 14px;
+  }
+
+  & > :not(:first-child) {
+    display: inline-block;
+    width: 100%;
   }
 }
 

@@ -20,7 +20,9 @@ const Editor: React.FC<Props> = () => {
   const [svg, setSvg] = React.useState<SVGSVGElement>();
   const [preview, setPreview] = React.useState<HTMLDivElement>();
   const [svgData, setSvgData] = React.useState('');
-  const [size, setSize] = React.useState(1);
+  const [patternSize, setPatternSize] = React.useState(1);
+  const [width, setWidth] = React.useState(300);
+  const [height, setHeight] = React.useState(300);
   const [primary, setPrimary] = React.useState<string>('#3a71a0');
   const [secondary, setSecondary] = React.useState<string>('white');
   const [patternName, setPatternName] = React.useState<PatternName>('yagasuri');
@@ -42,7 +44,7 @@ const Editor: React.FC<Props> = () => {
   React.useEffect(() => {
     if (svg == null) return;
     setSvgData(btoa(new XMLSerializer().serializeToString(svg)));
-  }, [svg, size, primary, secondary]);
+  }, [svg, patternSize, primary, secondary]);
 
   return (
     <>
@@ -51,7 +53,7 @@ const Editor: React.FC<Props> = () => {
           {patternName === null ? null : (
             <Pattern
               innerRef={setSvg}
-              size={size}
+              size={patternSize}
               primary={primary}
               secondary={secondary}
             />
@@ -65,34 +67,62 @@ const Editor: React.FC<Props> = () => {
               }}
               style={{
                 backgroundImage: `url(data:image/svg+xml;base64,${svgData})`,
+                width,
+                height,
               }}
             />
           </div>
           <div className={styles.params}>
             <PatternPicker onChange={handleSelectedChange} />
             <div className={styles.paramsRow}>
-              <span>Size</span>
+              <span>Pattern Size</span>
               <Slider
-                value={size}
-                onChange={setSize}
+                value={patternSize}
+                onChange={setPatternSize}
                 min={0.1}
                 max={2}
                 step={0.05}
               />
             </div>
             <div className={styles.paramsRow}>
-              <span>Primary</span>
-              <ColorPicker
-                color={primary ?? 'white'}
-                onChange={(color) => setPrimary(color)}
+              <span>Width</span>
+              <Slider
+                value={width}
+                onChange={setWidth}
+                min={1}
+                max={1000}
+                step={1}
               />
             </div>
             <div className={styles.paramsRow}>
+              <span>Height</span>
+              <span>
+                <Slider
+                  value={height}
+                  onChange={setHeight}
+                  min={1}
+                  max={1000}
+                  step={1}
+                />
+              </span>
+            </div>
+            <div className={styles.paramsRow}>
+              <span>Primary</span>
+              <span>
+                <ColorPicker
+                  color={primary ?? 'white'}
+                  onChange={(color) => setPrimary(color)}
+                />
+              </span>
+            </div>
+            <div className={styles.paramsRow}>
               <span>Secondary</span>
-              <ColorPicker
-                color={secondary ?? 'white'}
-                onChange={(color) => setSecondary(color)}
-              />
+              <span>
+                <ColorPicker
+                  color={secondary ?? 'white'}
+                  onChange={(color) => setSecondary(color)}
+                />
+              </span>
             </div>
             <div className={styles.paramsRow}>
               <Button onClick={handleExport}>Export</Button>
