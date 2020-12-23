@@ -134,7 +134,7 @@ const Editor: React.FC<Props> = () => {
                 />
               </span>
             </div>
-            <div className={styles.paramsRow}>
+            <div className={styles.paramsButtonRow}>
               <Button onClick={handleExport}>Export</Button>
             </div>
           </div>
