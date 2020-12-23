@@ -53,10 +53,6 @@
   }
 }
 
-.radioGroup {
-  display: flex;
-}
-
 .pattern {
   display: flex;
   margin-bottom: 20px;
@@ -85,4 +81,35 @@
   align-items: flex-start;
   flex: 1;
   margin-top: 20px;
+}
+
+.exportContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.exportOptions {
+  flex: 1;
+}
+
+.radioGroup {
+  margin-bottom: 10px;
+
+  & > p {
+    margin: 0;
+  }
+
+  & > div {
+    display: flex;
+  }
+}
+
+.exportActions {
+  display: flex;
+  justify-content: flex-end;
+
+  & > button:first-child {
+    margin-right: 14px;
+  }
 }

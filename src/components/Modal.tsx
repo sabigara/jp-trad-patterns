@@ -31,9 +31,7 @@ const Modal: React.FC<Props> = ({ title, icon, isOpen, close, children }) => {
 
   return (
     <ReactModal isOpen={isOpen} onRequestClose={close} style={styles}>
-      <div>
-        <div>{children}</div>
-      </div>
+      {children}
     </ReactModal>
   );
 };

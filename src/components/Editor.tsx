@@ -225,44 +225,57 @@ const Export: React.FC<ExportProps> = ({
 
   return (
     <Modal isOpen={isOpen} close={close}>
-      <div className={styles.radioGroup}>
-        <Radio
-          label="svg"
-          id="svg"
-          selected={format === 'svg'}
-          value="svg"
-          group="format"
-          onChange={handleFormatChange}
-        />
-        <Radio
-          label="png"
-          id="png"
-          selected={format === 'png'}
-          value="png"
-          group="format"
-          onChange={handleFormatChange}
-        />
-      </div>
-      <div className={styles.radioGroup}>
-        <Radio
-          label="pattern"
-          id="pattern"
-          selected={size === 'pattern'}
-          value="pattern"
-          group="size"
-          onChange={handleSizeChange}
-        />
-        <Radio
-          label="whole"
-          id="whole"
-          selected={size === 'whole'}
-          value="whole"
-          group="size"
-          onChange={handleSizeChange}
-        />
-      </div>
-      <div>
-        <Button onClick={handleDownloadClick}>Download</Button>
+      <div className={styles.exportContainer}>
+        <div className={styles.exportOptions}>
+          <div className={styles.radioGroup}>
+            <p>Format:</p>
+            <div>
+              <Radio
+                label="svg"
+                id="svg"
+                selected={format === 'svg'}
+                value="svg"
+                group="format"
+                onChange={handleFormatChange}
+              />
+              <Radio
+                label="png"
+                id="png"
+                selected={format === 'png'}
+                value="png"
+                group="format"
+                onChange={handleFormatChange}
+              />
+            </div>
+          </div>
+          <div className={styles.radioGroup}>
+            <p>Type:</p>
+            <div>
+              <Radio
+                label="pattern"
+                id="pattern"
+                selected={size === 'pattern'}
+                value="pattern"
+                group="size"
+                onChange={handleSizeChange}
+              />
+              <Radio
+                label="whole"
+                id="whole"
+                selected={size === 'whole'}
+                value="whole"
+                group="size"
+                onChange={handleSizeChange}
+              />
+            </div>
+          </div>
+        </div>
+        <div className={styles.exportActions}>
+          <Button onClick={close} color="danger" type="outline">
+            Cancel
+          </Button>
+          <Button onClick={handleDownloadClick}>Download</Button>
+        </div>
       </div>
     </Modal>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import styles from '@/components/Radio.module.scss';
+import styles from '@/components/Radio.module.scss';
 
 type Props = {
   label: string;
@@ -24,7 +24,7 @@ const RadioButton: React.FC<Props> = ({
   };
 
   return (
-    <div>
+    <div className={styles.radio}>
       <input
         id={id}
         onChange={handleChange}
