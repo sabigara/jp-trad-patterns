@@ -86,23 +86,43 @@ const Editor: React.FC<Props> = () => {
             </div>
             <div className={styles.paramsRow}>
               <span>Pattern Size</span>
-              <Slider
-                value={patternSize}
-                onChange={setPatternSize}
-                min={0.1}
-                max={2}
-                step={0.05}
-              />
+              <span>
+                <Slider
+                  value={patternSize}
+                  onChange={setPatternSize}
+                  min={0.1}
+                  max={2}
+                  step={0.05}
+                />
+                <input
+                  type="number"
+                  value={patternSize}
+                  onChange={(e) =>
+                    setPatternSize(Number(e.currentTarget.value))
+                  }
+                  step={0.05}
+                  className={styles.numInput}
+                />
+              </span>
             </div>
             <div className={styles.paramsRow}>
               <span>Width</span>
-              <Slider
-                value={width}
-                onChange={setWidth}
-                min={1}
-                max={1000}
-                step={1}
-              />
+              <span>
+                <Slider
+                  value={width}
+                  onChange={setWidth}
+                  min={1}
+                  max={1000}
+                  step={1}
+                />
+                <input
+                  type="number"
+                  value={width}
+                  onChange={(e) => setWidth(Number(e.currentTarget.value))}
+                  step={1}
+                  className={styles.numInput}
+                />
+              </span>
             </div>
             <div className={styles.paramsRow}>
               <span>Height</span>
@@ -113,6 +133,13 @@ const Editor: React.FC<Props> = () => {
                   min={1}
                   max={1000}
                   step={1}
+                />
+                <input
+                  type="number"
+                  value={height}
+                  onChange={(e) => setHeight(Number(e.currentTarget.value))}
+                  step={1}
+                  className={styles.numInput}
                 />
               </span>
             </div>

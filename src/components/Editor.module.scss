@@ -43,14 +43,20 @@
 
   & > :first-child {
     display: inline-block;
-    width: 150px;
-    margin-right: 14px;
+    width: 98px;
+    font-size: 15px;
   }
 
   & > :not(:first-child) {
-    display: inline-block;
-    width: 100%;
+    display: inline-flex;
+    flex: 1;
+    align-items: center;
   }
+}
+
+.numInput {
+  width: 60px;
+  margin-left: 10px;
 }
 
 .pattern {
