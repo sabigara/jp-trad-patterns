@@ -13,6 +13,7 @@ import PatternPicker, {
 } from '@/components/PatternPicker';
 
 import styles from '@/components/Editor.module.scss';
+import { enToJa, toFirstUpperCase } from '@/lib/util';
 
 type Props = unknown;
 
@@ -73,7 +74,16 @@ const Editor: React.FC<Props> = () => {
             />
           </div>
           <div className={styles.params}>
-            <PatternPicker onChange={handleSelectedChange} />
+            <div className={styles.pattern}>
+              <PatternPicker
+                patternName={patternName}
+                onChange={handleSelectedChange}
+              />
+              <div>
+                <h2>{toFirstUpperCase(patternName)}</h2>
+                <h3>{enToJa[patternName]}</h3>
+              </div>
+            </div>
             <div className={styles.paramsRow}>
               <span>Pattern Size</span>
               <Slider

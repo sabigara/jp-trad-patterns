@@ -10,6 +10,7 @@ type Props = {
   size?: 'small' | 'medium';
   loading?: boolean;
   disabled?: boolean;
+  expand?: boolean;
 };
 
 const Button: React.FC<Props> = ({
@@ -19,6 +20,7 @@ const Button: React.FC<Props> = ({
   type = 'fill',
   color = 'primary',
   size = 'medium',
+  expand,
   onClick,
 }) => {
   const colorType = type + color.replace(color[0], color[0].toUpperCase());
@@ -27,7 +29,12 @@ const Button: React.FC<Props> = ({
     <button
       type="button"
       onClick={onClick}
-      className={clsx(styles.button, styles[colorType], styles[size])}
+      className={clsx(
+        styles.button,
+        styles[colorType],
+        styles[size],
+        expand ? styles.expand : null,
+      )}
       disabled={loading || disabled}
     >
       {loading ? '...' : children}
