@@ -114,7 +114,7 @@ const Editor: React.FC<Props> = () => {
                   value={width}
                   onChange={setWidth}
                   min={1}
-                  max={1000}
+                  max={2000}
                   step={1}
                 />
                 <input
@@ -122,7 +122,7 @@ const Editor: React.FC<Props> = () => {
                   value={width}
                   onChange={(e) => setWidth(Number(e.currentTarget.value))}
                   min={1}
-                  max={1000}
+                  max={2000}
                   step={1}
                   className={styles.numInput}
                 />
