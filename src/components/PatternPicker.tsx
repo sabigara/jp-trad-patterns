@@ -21,6 +21,16 @@ export const getByName = (name: PatternName) => {
       return patterns.Seigaiha;
     case 'hishiseigaiha':
       return patterns.HishiSeigaiha;
+    case 'ichimatsu':
+      return patterns.Ichimatsu;
+    case 'shichihou':
+      return patterns.Shichihou;
+    case 'matsukawabishi':
+      return patterns.Matsukawabishi;
+    case 'urokomon':
+      return patterns.Urokomon;
+    case 'kagome':
+      return patterns.Kagome;
     default:
       throw new Error('Invalid pattern name.');
   }

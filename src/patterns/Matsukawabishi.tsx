@@ -2,14 +2,14 @@ import React from 'react';
 
 import { PatternProps } from '@/lib/interfaces';
 
-const Yagasuri: React.FC<PatternProps> = ({
+const Matsukawabishi: React.FC<PatternProps> = ({
   innerRef,
   primary = '#888',
   secondary = 'white',
   size = 1,
 }) => {
-  const width = 80 * size;
-  const height = 120 * size;
+  const width = 100 * size;
+  const height = 70 * size;
   return (
     <div style={{ width, height }}>
       <svg
@@ -18,18 +18,17 @@ const Yagasuri: React.FC<PatternProps> = ({
         xmlns="http://www.w3.org/2000/svg"
         width={width}
         height={height}
-        viewBox="0 0 80 120"
+        viewBox="0 0 20 14"
         preserveAspectRatio="none"
       >
-        <path fill={secondary} d="M-40-60v240h160v-240z" />
+        <path fill={primary} d="M-10-7v28h40v-28z" />
         <path
-          fill={primary}
-          fillRule="evenodd"
-          d="m0 0l19 19h2l19-19v60l-19 19h-2l-19-19zm19-60h2v240h-2zm21 0l19 19h2l19-19v60l-19 19h-2l-19-19zm19 0h2v240h-2zm-19 120l19 19h2l19-19v60l-19 19h-2l-19-19z"
+          fill={secondary}
+          d="m10 0 6 3-2 1 6 3-6 3 2 1-6 3-6-3 2-1-6-3 6-3-2-1z"
         />
       </svg>
     </div>
   );
 };
 
-export default Yagasuri;
+export default Matsukawabishi;

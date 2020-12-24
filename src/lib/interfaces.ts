@@ -5,4 +5,12 @@ export type PatternProps = {
   size?: number;
 };
 
-export type PatternName = 'yagasuri' | 'seigaiha' | 'hishiseigaiha';
+export type PatternName =
+  | 'yagasuri'
+  | 'seigaiha'
+  | 'hishiseigaiha'
+  | 'ichimatsu'
+  | 'shichihou'
+  | 'matsukawabishi'
+  | 'urokomon'
+  | 'kagome';

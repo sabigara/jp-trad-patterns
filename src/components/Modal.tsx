@@ -6,11 +6,19 @@ export type Props = {
   icon?: React.ReactNode;
   isOpen: boolean;
   close: () => void;
+  height?: number;
 };
 
 ReactModal.setAppElement('#__next');
 
-const Modal: React.FC<Props> = ({ title, icon, isOpen, close, children }) => {
+const Modal: React.FC<Props> = ({
+  title,
+  icon,
+  isOpen,
+  close,
+  height,
+  children,
+}) => {
   const styles: Styles = React.useMemo(
     () => ({
       overlay: {
@@ -18,7 +26,7 @@ const Modal: React.FC<Props> = ({ title, icon, isOpen, close, children }) => {
       },
       content: {
         width: 500,
-        height: 200,
+        height,
         top: '50%',
         left: '50%',
         transform: 'translateX(-50%) translateY(-50%)',
@@ -26,7 +34,7 @@ const Modal: React.FC<Props> = ({ title, icon, isOpen, close, children }) => {
         borderRadius: 12,
       },
     }),
-    [],
+    [height],
   );
 
   return (

@@ -2,27 +2,23 @@ import React from 'react';
 
 import { PatternProps } from '@/lib/interfaces';
 
-const viewWidth = 120;
-const viewHeight = 60;
-
 const Seigaiha: React.FC<PatternProps> = ({
   innerRef,
   primary = '#888',
   secondary = 'white',
-  size,
+  size = 1,
 }) => {
-  const s = size ?? 1;
-  const width = viewWidth * s;
-  const height = viewHeight * s;
+  const width = 120 * size;
+  const height = 60 * size;
   return (
-    <div style={{ width: viewWidth, height: viewHeight }}>
+    <div style={{ width, height }}>
       <svg
         ref={innerRef}
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         width={width}
         height={height}
-        viewBox={`0 0 ${viewWidth} ${viewHeight}`}
+        viewBox="0 0 120 60"
         preserveAspectRatio="none"
       >
         <path fill={primary} d="M-60-30v120h240v-120z" />

@@ -100,6 +100,8 @@ const Editor: React.FC<Props> = () => {
                   onChange={(e) =>
                     setPatternSize(Number(e.currentTarget.value))
                   }
+                  min={0.1}
+                  max={2}
                   step={0.05}
                   className={styles.numInput}
                 />
@@ -119,6 +121,8 @@ const Editor: React.FC<Props> = () => {
                   type="number"
                   value={width}
                   onChange={(e) => setWidth(Number(e.currentTarget.value))}
+                  min={1}
+                  max={1000}
                   step={1}
                   className={styles.numInput}
                 />
@@ -138,6 +142,8 @@ const Editor: React.FC<Props> = () => {
                   type="number"
                   value={height}
                   onChange={(e) => setHeight(Number(e.currentTarget.value))}
+                  min={1}
+                  max={1000}
                   step={1}
                   className={styles.numInput}
                 />
@@ -247,7 +253,7 @@ const Export: React.FC<ExportProps> = ({
   }, [downloadPNG, downloadSVG, format]);
 
   return (
-    <Modal isOpen={isOpen} close={close}>
+    <Modal isOpen={isOpen} close={close} height={200}>
       <div className={styles.exportContainer}>
         <div className={styles.exportOptions}>
           <div className={styles.radioGroup}>
