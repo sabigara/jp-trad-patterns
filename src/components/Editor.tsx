@@ -24,7 +24,7 @@ const Editor: React.FC<Props> = () => {
   const [patternSize, setPatternSize] = React.useState(1);
   const [width, setWidth] = React.useState(300);
   const [height, setHeight] = React.useState(300);
-  const [primary, setPrimary] = React.useState<string>('#3a71a0');
+  const [primary, setPrimary] = React.useState<string>('#7058a3');
   const [secondary, setSecondary] = React.useState<string>('white');
   const [patternName, setPatternName] = React.useState<PatternName>('yagasuri');
   const [exportOpen, setExportOpen] = React.useState(false);

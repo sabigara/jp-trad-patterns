@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Halant:wght@500&family=Trirong:ital,wght@0,400;0,500;1,300&display=swap');
+@import '/src/styles/variables.scss';
+
+.header {
+  height: $headerHeight;
+  background: url('/seigaiha.png');
+  display: flex;
+  justify-content: center;
+
+  h1 {
+    font-family: 'Trirong', serif;
+    position: relative;
+    display: inline-block;
+    color: var(--heading);
+    margin: 0;
+    padding: 0 20px;
+    text-align: center;
+    vertical-align: middle;
+    background: #fff;
+  }
+}
