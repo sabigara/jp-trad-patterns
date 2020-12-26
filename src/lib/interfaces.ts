@@ -5,12 +5,15 @@ export type PatternProps = {
   size?: number;
 };
 
-export type PatternName =
-  | 'yagasuri'
-  | 'seigaiha'
-  | 'hishiseigaiha'
-  | 'ichimatsu'
-  | 'shichihou'
-  | 'matsukawabishi'
-  | 'urokomon'
-  | 'kagome';
+export const PATTERN_NAMES = [
+  'yagasuri',
+  'seigaiha',
+  'hishiseigaiha',
+  'ichimatsu',
+  'shichihou',
+  'matsukawabishi',
+  'urokomon',
+  'kagome',
+] as const;
+
+export type PatternName = typeof PATTERN_NAMES[number];

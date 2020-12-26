@@ -1,7 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import { PatternName } from '@/lib/interfaces';
+import { toFirstUpperCase } from '@/lib/util';
+import { PatternName, PATTERN_NAMES } from '@/lib/interfaces';
 import * as patterns from '@/patterns';
 import Modal from '@/components/Modal';
 import Button from '@/components/Button';
@@ -20,7 +21,7 @@ export const getByName = (name: PatternName) => {
     case 'seigaiha':
       return patterns.Seigaiha;
     case 'hishiseigaiha':
-      return patterns.HishiSeigaiha;
+      return patterns.Hishiseigaiha;
     case 'ichimatsu':
       return patterns.Ichimatsu;
     case 'shichihou':
@@ -55,18 +56,16 @@ const PatternPicker: React.FC<Props> = ({ patternName, onChange }) => {
       <Modal isOpen={isOpen} close={() => setOpen(false)}>
         <div>
           <ul className={styles.list}>
-            {Object.values(patterns).map((Component) => (
-              <li key={Component.name}>
+            {PATTERN_NAMES.map((name) => (
+              <li key={name}>
                 <button
                   type="button"
                   className={styles.button}
-                  onClick={() =>
-                    onChange(Component.name.toLowerCase() as PatternName)
-                  }
+                  onClick={() => onChange(name as PatternName)}
                 >
                   <PatternThumbnail
-                    Component={Component}
-                    selected={Component.name.toLowerCase() === patternName}
+                    Component={patterns[toFirstUpperCase(name)]}
+                    selected={name === patternName}
                   />
                 </button>
               </li>
