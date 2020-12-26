@@ -166,6 +166,9 @@ const Editor: React.FC<Props> = () => {
             <div className={styles.paramsButtonRow}>
               <Button onClick={handleExport}>Export</Button>
             </div>
+            <div className={styles.paramsCredit}>
+              Made by<a href="https://twitter.com/MatsuraYuma">Matsura Yuma</a>
+            </div>
           </div>
         </div>
       </div>
