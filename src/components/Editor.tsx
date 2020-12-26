@@ -135,7 +135,7 @@ const Editor: React.FC<Props> = () => {
                   value={height}
                   onChange={setHeight}
                   min={1}
-                  max={1000}
+                  max={2000}
                   step={1}
                 />
                 <input
@@ -143,7 +143,7 @@ const Editor: React.FC<Props> = () => {
                   value={height}
                   onChange={(e) => setHeight(Number(e.currentTarget.value))}
                   min={1}
-                  max={1000}
+                  max={2000}
                   step={1}
                   className={styles.numInput}
                 />
