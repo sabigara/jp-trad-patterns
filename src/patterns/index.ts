@@ -1,4 +1,4 @@
-export { default as Yagasuri } from './Yagasuri';
+export { default as Yagasuri } from '@/patterns/Yagasuri';
 export { default as Seigaiha } from '@/patterns/Seigaiha';
 export { default as HishiSeigaiha } from '@/patterns/HishiSeigaiha';
 export { default as Ichimatsu } from '@/patterns/Ichimatsu';
