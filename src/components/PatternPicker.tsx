@@ -32,7 +32,7 @@ export const getByName = (name: PatternName) => {
     case 'kagome':
       return patterns.Kagome;
     default:
-      throw new Error('Invalid pattern name.');
+      throw new Error(`Invalid pattern name: ${name}`);
   }
 };
 
