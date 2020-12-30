@@ -217,10 +217,8 @@ const Export: React.FC<ExportProps> = ({
     let data: string;
     if (size === 'pattern') {
       data = svg.outerHTML;
-    } else {
-      data = await toSvg(preview);
+      download(data, `${patternName}.svg`);
     }
-    download(data, `${patternName}.svg`);
   }, [patternName, preview, size, svg]);
 
   const downloadPNG = React.useCallback(async () => {
@@ -230,6 +228,8 @@ const Export: React.FC<ExportProps> = ({
       const div = document.createElement('div');
       div.style.position = 'absolute';
       div.style.top = '0';
+      div.style.width = `${svg.getAttribute('width')}px`;
+      div.style.height = `${svg.getAttribute('height')}px`;
       div.style.zIndex = '-1';
       div.style.display = 'inline-block';
       div.appendChild(svg.cloneNode(true));
@@ -291,14 +291,16 @@ const Export: React.FC<ExportProps> = ({
                 group="size"
                 onChange={handleSizeChange}
               />
-              <Radio
-                label="whole"
-                id="whole"
-                selected={size === 'whole'}
-                value="whole"
-                group="size"
-                onChange={handleSizeChange}
-              />
+              {format === 'png' ? (
+                <Radio
+                  label="whole"
+                  id="whole"
+                  selected={size === 'whole'}
+                  value="whole"
+                  group="size"
+                  onChange={handleSizeChange}
+                />
+              ) : null}
             </div>
           </div>
         </div>
